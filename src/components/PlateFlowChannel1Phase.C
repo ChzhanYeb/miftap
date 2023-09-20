@@ -3,7 +3,7 @@
 #include "SinglePhaseFluidProperties.h"
 #include "HeatTransfer1PhaseBase.h"
 #include "Closures1PhaseBase.h"
-#include "ThermalHydraulicsApp.h"
+#include "MIFTAPApp.h"
 #include "SlopeReconstruction1DInterface.h"
 
 registerMooseObject("MIFTAPApp", PlateFlowChannel1Phase);

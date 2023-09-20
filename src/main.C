@@ -14,7 +14,7 @@
 #include "AppFactory.h"
 
 // Create a performance log
-PerfLog Moose::perf_log("MIFTAP");
+PerfLog Moose::perf_log("THM");
 
 // Begin the main program.
 int
@@ -27,7 +27,8 @@ main(int argc, char * argv[])
   MIFTAPTestApp::registerApps();
 
   // Create an instance of the application and store it in a smart pointer for easy cleanup
-  std::shared_ptr<MooseApp> app = AppFactory::createAppShared("MIFTAPTestApp", argc, argv);
+  std::shared_ptr<MooseApp> app =
+      AppFactory::createAppShared("MIFTAPTestApp", argc, argv);
 
   // Execute the application
   app->run();
