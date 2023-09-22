@@ -14,6 +14,8 @@
 namespace WallFriction
 {
 
+
+
 Real
 DarcyFrictionFactor(const Real & f_F)
 {
@@ -25,6 +27,8 @@ DarcyFrictionFactor(const ADReal & f_F)
 {
   return 4 * f_F;
 }
+
+
 
 Real
 FanningFrictionFactorChurchill(Real Re, Real roughness, Real Dh)
@@ -47,4 +51,58 @@ FanningFrictionFactorChurchill(ADReal Re, ADReal roughness, ADReal Dh)
   ADReal b = std::pow(3.753e4 / Re_limit, 16);
   return 2.0 * std::pow(std::pow(8.0 / Re_limit, 12) + 1.0 / std::pow(a + b, 1.5), 1.0 / 12.0);
 }
+
+
+
+Real
+FanningFrictionEckertIrvine(Real Re)
+{
+  return 96 / Re;
+}
+
+ADReal
+FanningFrictionEckertIrvine(ADReal Re)
+{
+  return 96 / Re;
+}
+
+
+
+Real
+FanningFrictionBlasius(Real Re)
+{
+  return 0.316 / std::pow(Re, -0.25);
+}
+
+ADReal
+FanningFrictionBlasius(ADReal Re)
+{
+  return 0.316 / std::pow(Re, -0.25);
+}
+
+
+Real
+FanningFrictionKazeminejad(Real Re)
+{
+  Real Re_limit = std::min(std::max(Re, 2200.0), 3000.0);
+
+  Real a = 3.75 - 8250 / Re_limit;
+  Real b = FanningFrictionBlasius(3000.0) - FanningFrictionEckertIrvine(2200.0);
+  Real c = FanningFrictionEckertIrvine(2200.0);
+  
+  return (a * b + c);
+}
+
+ADReal
+FanningFrictionKazeminejad(ADReal Re)
+{
+  ADReal Re_limit = std::min(std::max(Re, 2200.0), 3000.0);
+
+  ADReal a = 3.75 - 8250 / Re_limit;
+  ADReal b = FanningFrictionBlasius(3000.0) - FanningFrictionEckertIrvine(2200.0);
+  ADReal c = FanningFrictionEckertIrvine(2200.0);
+  
+  return (a * b + c);
+}
+
 }

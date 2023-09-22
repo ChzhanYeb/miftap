@@ -53,4 +53,29 @@ FanningFrictionFactorCheng(
 {
   return (a + b * (PoD - 1) + c * std::pow(PoD - 1, 2)) / std::pow(std::max(Re, 10.0), n);
 }
+
+
+/**
+ * Computes Fanning friction factor using Eckert-Irvine correlation
+ *
+ * @param Re Reynolds number
+ */
+Real FanningFrictionEckertIrvine(Real Re);
+ADReal FanningFrictionEckertIrvine(ADReal Re);
+
+/**
+ * Computes Fanning friction factor using Blasius correlation
+ *
+ * @param Re Reynolds number
+ */
+Real FanningFrictionBlasius(Real Re);
+ADReal FanningFrictionBlasius(ADReal Re);
+
+/**
+ * Computes Fanning friction factor using Kazeminejad correlation
+ *
+ * @param Re Reynolds number
+ */
+Real FanningFrictionKazeminejad(Real Re);
+ADReal FanningFrictionKazeminejad(ADReal Re);
 }

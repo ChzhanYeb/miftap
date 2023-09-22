@@ -27,8 +27,9 @@ public:
   /// Type of convective heat transfer geometry
   enum EConvHeatTransGeom
   {
-    PIPE,      ///< pipe geometry
-    ROD_BUNDLE ///< rod bundle geometry
+    PIPE,       ///< pipe geometry
+    ROD_BUNDLE, ///< rod bundle geometry
+    PLATE       ///< plate geometry
   };
   /// Pipe type
   enum EPipeType
