@@ -18,7 +18,7 @@
 
 const std::map<std::string, FlowChannelBase::EConvHeatTransGeom>
     FlowChannelBase::_heat_transfer_geom_to_enum{
-    {"PIPE", PIPE}, {"ROD_BUNDLE", ROD_BUNDLE},{"PLATE",PLATE}};
+    {"PIPE", PIPE}, {"ROD_BUNDLE", ROD_BUNDLE},{"PLATE",PLATE},{"ARCPLATE",ARCPLATE}};
 
 const std::map<std::string, FlowChannelBase::EPipeType> FlowChannelBase::_pipe_type_to_enum{
     {"STRAIGHT", STRAIGHT}, {"CURVED", CURVED}, {"DOWNCOMER", DOWNCOMER}};

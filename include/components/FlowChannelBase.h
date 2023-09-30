@@ -29,7 +29,8 @@ public:
   {
     PIPE,       ///< pipe geometry
     ROD_BUNDLE, ///< rod bundle geometry
-    PLATE       ///< plate geometry
+    PLATE,      ///< plate geometry
+    ARCPLATE    ///< arc plate geometry
   };
   /// Pipe type
   enum EPipeType
